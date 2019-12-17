@@ -19,6 +19,7 @@ function reducer(state, action) {
     };
 
     return {
+      ...state,
       threads: [
         ...state.threads.slice(0, threadIndex),
         newThread,
@@ -85,8 +86,6 @@ class App extends React.Component {
         <ThreadTabs tabs={tabs} />
         <Thread thread={activeThread} />
       </div>
-      /** @desc: passing activeThread to ThreadComponent
-       so it will know which to render*/
     );
   }
 }
