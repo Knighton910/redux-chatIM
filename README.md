@@ -1,6 +1,8 @@
 # Redux-ChatIM
 ### Running the app
 
+Adding ReactRedux 
+
 1. Ensure you have `npm` installed.
 
 Follow the instructions for your platform [here](https://github.com/npm/npm).

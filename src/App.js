@@ -115,6 +115,9 @@ const Tabs = (props) => (
   </div>
 );
 
+/**
+*  @desc Container component
+*/
 class ThreadTabs extends React.Component {
   componentDidMount() {
     store.subscribe(() => this.forceUpdate());
@@ -214,6 +217,9 @@ const Thread = (props) => (
   </div>
 );
 
+/**
+*  @desc Container component
+*/
 class ThreadDisplay extends React.Component {
   componentDidMount() {
     store.subscribe(() => this.forceUpdate());
