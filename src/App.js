@@ -1,7 +1,6 @@
 import React from 'react';
 import uuid from 'uuid';
 import { createStore, combineReducers } from 'redux';
-import { Provider } from 'react-redux';
 
 const reducer = combineReducers({
   activeThreadId: activeThreadIdReducer,
@@ -91,13 +90,13 @@ function messagesReducer(state = [], action) {
 
 const store = createStore(reducer);
 
+/** @desc: rendering the two Container components */
 const App = () => (
   <div className='ui segment'>
-    {/* `Thread` changed to `ThreadDisplay` below */}
     <ThreadTabs />
     <ThreadDisplay />
   </div>
-);
+)
 
 const Tabs = (props) => (
   <div className='ui top attached tabular menu'>
@@ -115,9 +114,6 @@ const Tabs = (props) => (
   </div>
 );
 
-/**
-*  @desc Container component
-*/
 class ThreadTabs extends React.Component {
   componentDidMount() {
     store.subscribe(() => this.forceUpdate());
@@ -217,9 +213,6 @@ const Thread = (props) => (
   </div>
 );
 
-/**
-*  @desc Container component
-*/
 class ThreadDisplay extends React.Component {
   componentDidMount() {
     store.subscribe(() => this.forceUpdate());
@@ -253,10 +246,4 @@ class ThreadDisplay extends React.Component {
   }
 }
 
-const WrappedApp = () => (
-  <Provider store={store}>
-    <App />
-  </Provider>
-);
-
-export default WrappedApp;
+export default App;
